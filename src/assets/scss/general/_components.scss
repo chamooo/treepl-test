@@ -1,0 +1,89 @@
+// dropdown -------------------------
+.dropdown {
+  position: relative;
+  display: inline-block;
+  &:hover::after {
+    border-right: 1px solid $primary;
+    border-bottom: 1px solid $primary;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 50%;
+    right: -15px;
+    width: 5px;
+    height: 5px;
+    border-right: 1px solid $white;
+    border-bottom: 1px solid $white;
+    transform: rotate(45deg) translateY(50%);
+    transition: all .2s ease;
+  }
+  &-content {
+    opacity: 0;
+    transition: all .2s ease;
+    position: absolute;
+    background-color: $black;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+  }
+  &:hover {
+    .dropdown-content {
+      opacity: 1;
+    }
+  }
+}
+
+
+// breadcrumbs -------------------------
+.breadcrumbs {
+  display: flex;
+  column-gap: 30px;
+
+  &__link {
+    position: relative;
+    font-weight: 300;
+    color: $white;
+    &.active {
+      color: $primary;
+    }
+    &:not(:last-child) {
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        border-top: 1.5px solid $white;
+        border-right: 1.5px solid $white;
+        transform: rotate(45deg);
+        top: 9px;
+      }
+      &::before {
+        left: 117%;
+      }
+      &::after {
+        left: 130%;
+      }
+    }
+  }
+  @media (max-width: $md4 + "px") {
+    column-gap: 25px;
+    &__link {
+      font-size: 14px;
+
+      &:not(:last-child) {
+        &::before, &::after {
+          width: 5px;
+          height: 5px;
+          top: 8px;
+        }
+      }
+    }
+  }
+}

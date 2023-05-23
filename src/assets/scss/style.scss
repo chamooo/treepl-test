@@ -1,0 +1,121 @@
+@import "general/null";
+@import "general/fonts";
+@import "general/mixins";
+@import "general/variables";
+@import "general/components";
+@import "general/header";
+@import "general/footer";
+@import "general/animations";
+
+@import "about/hero";
+@import "about/about-agency";
+@import "about/projects";
+
+
+.title {
+  text-transform: uppercase;
+  font-weight: 700;
+  &.primary {
+    font-size: 35px;
+    line-height: 40px;
+    margin-bottom: 45px;
+    text-align: center;
+    @media (max-width: $md3 + "px") {
+      font-size: 29px;
+      margin-bottom: 15px;
+    }
+  }
+  &.secondary {
+    font-size: 20px;
+    line-height: 25px;
+
+    @media (max-width: $md3 + "px") {
+      font-size: 17px;
+    }
+  }
+
+  &.big {
+    font-size: 60px;
+    line-height: 100%;
+  }
+
+  @media (max-width: $md2 + "px") {
+    &.big {
+      font-size: 55px;
+    }
+  }
+  @media (max-width: $md3 + "px") {
+    &.big {
+      font-size: 50px;
+    }
+  }
+  @media (max-width: $md4 + "px") {
+    &.big {
+      font-size: 40px;
+    }
+  }
+}
+
+
+body {
+  font-family: Muli, sans-serif;
+  position: relative;
+  font-size: 15px;
+  color: $black;
+  a {
+    font-family: Muli, sans-serif !important;
+    transition: all .2s ease;
+    color: $black;
+  }
+
+  &.lock {
+    overflow: hidden;
+  }
+  @media (max-width: $md4 + "px") {
+      font-size: 14px;
+  }
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  flex: 1 1 auto;
+  padding-top: 70px;
+}
+
+section {
+  padding: 75px 0;
+  &:first-child {
+    padding-top: 0;
+  }
+  @media (max-width: $md3 + "px") {
+    padding: 50px 0;
+  }
+}
+
+[class*="__container"] {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+@media (max-width: 1199.98px){
+  [class*="__container"] {
+    max-width: 970px;
+  }
+}
+@media (max-width: 990.98px){
+  [class*="__container"] {
+    max-width: 750px;
+  }
+}
+@media (max-width: 768.98px){
+  [class*="__container"] {
+    max-width: none;
+  }
+}
+

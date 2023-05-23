@@ -1,0 +1,33 @@
+.footer {
+  background: $black;
+  padding: 15px 0;
+  a {
+    color: $white;
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+.body-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // .body-footer__socials
+  &__socials {
+    display: flex;
+    column-gap: 20px;
+    a {
+      padding: 5px;
+      font-size: 20px;
+    }
+  }
+}
+
+@media (max-width: $md3 + "px") {
+  .body-footer {
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 20px;
+  }
+}
